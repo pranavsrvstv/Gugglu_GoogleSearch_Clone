@@ -13,8 +13,8 @@ export const ResultContextProvider=({children})=>{
     method:'GET',
     headers:{
          
-         'X-RapidAPI-Key': '020204b7demsh2752ca8f6255d0fp19a2e5jsn341372b59bab',
-         'X-RapidAPI-Host': 'google-search72.p.rapidapi.com'
+        'X-RapidAPI-Key': 'e21db2f5a5msha3239565e07944ep1d6363jsnf52184dff56c',
+        'X-RapidAPI-Host': 'google-search72.p.rapidapi.com'
     },
     }
    

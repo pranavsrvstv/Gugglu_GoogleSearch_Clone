@@ -10,14 +10,13 @@ const Results = () => {
   useEffect(()=>{
     if(searchTerm){
       if(location.pathname=== '/videos'){
-       // getResults(`/search?query=${searchTerm}&gl=us&lr=en&num=10&start=0&sort=relevance`)
+       getResults(`/search?query=${searchTerm}&gl=us&lr=en&num=10&start=0&sort=relevance`)
       }
       else{
-        //getResults(`/${location.pathname}?query=${searchTerm}&gl=us&lr=en&num=10&start=0&sort=relevance`)
+        getResults(`${location.pathname}?query=${searchTerm}&gl=us&lr=en&num=10&start=0&sort=relevance`)
       }
     }
-  //getResults('/search?query=word%20cup&gl=us&lr=en&num=10&start=0&sort=relevance');
-  },[searchTerm,,location.pathname,getResults]);
+  },[searchTerm,,location.pathname]);
 
   if(isLoading) return (<Loading/>);
   console.log(location.pathname);
@@ -25,9 +24,9 @@ const Results = () => {
     case '/search':
       return (
 
-        <div className='flex flex-wrap justify-between space-y-6 sm:px-56' >
+        <div className='flex flex-wrap justify-center items-center' >
           
-          <div className="sm:px-56 flex flex-wrap justify-between space-y-6">
+          <div className="sm:px-56 flex flex-wrap justify-between items-start space-y-6">
           {results?.items?.map(({ link, title }, index) => (
             <div key={index} className="md:w-2/5 w-full">
               
@@ -40,8 +39,19 @@ const Results = () => {
         </div>
         </div>
       );
-    case '/images':
-        return 'Search';
+    case '/imagesearch':
+      return (
+        <div className='flex flex-wrap '>
+          {results?.items?.map(({title,thumbnailImageUrl,contextLink}, index) => (
+           <a  className="sm:p-3 p-5" href={contextLink} key={index} target="_blank" rel="noreferrer">
+            <img src={thumbnailImageUrl} alt={title} loading="lazy" />
+            <p className='width-36 break-words '></p>
+           </a>
+          ))}
+          
+        </div>
+
+      );
     case '/news':
         return 'Search';
     case '/videos':

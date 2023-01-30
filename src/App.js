@@ -12,6 +12,7 @@ const App = () => {
           <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
           
           <MyRoutes/>
+          
           <Footer/>
         </div>
       </div>

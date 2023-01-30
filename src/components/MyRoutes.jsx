@@ -7,11 +7,12 @@ function MyRoutes() {
  
   return (
     <div className='p-4'>
-      {/* {useRoutes(['/search','images','news','videos'].map(path => ({path, element})))} */}
+      {/* {useRoutes(['/search','/imagesearch'].map(path => ({path, element})))} */}
       <Routes>
             {/* Dashboard */}
-              {/* <Route path='/'  element={<Navigate to="/search" replace />} />    */}
+               <Route path='/'  element={<Navigate to="/search" replace />} />   
               <Route path='/search'  element={<Results/>} />   
+              <Route path='/imagesearch'  element={<Results/>} />   
               
               
       </Routes>

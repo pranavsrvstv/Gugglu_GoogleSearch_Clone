@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {Search} from './Search';
+import Search from './Search';
 
 function Navbar({darkTheme,setDarkTheme}) {
   return (
@@ -12,10 +12,15 @@ function Navbar({darkTheme,setDarkTheme}) {
         Gugglu 🔍
       </p>
     </Link>
+    
     <button type='button' onClick={()=>setDarkTheme(!darkTheme)} className="text-xl dark:bg-gray-50 dark:text-gray-900 bg-white rounded-full px-2 py-1 hover:shadow-lg border-2 border-blue-200">
       {darkTheme?'Dark🌙':'Light💡'}
     </button>
    </div>
+   <div className='w-full flex justify-between'>
+   <Search/>
+   </div>
+   
     </div>
   )
 }
